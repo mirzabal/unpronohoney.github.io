@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aydınlatma Metni - UniSaver</title>
+    <link rel="icon" type="image/png" href="icons/Frame 2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E4156;
+            --bg-color: #0f0f12;
+            --text-color: #ffffff;
+            --text-muted: #a1a1aa;
+            --accent: #a78bfa;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        .topbar {
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: radial-gradient(circle at 50% -20%, #2e1065 0%, #0f0f12 70%);
+        }
+        .brand { display: flex; align-items: center; gap: 0.75rem; }
+        .brand img { width: 36px; height: 36px; border-radius: 9px; }
+        .brand a { color: #fff; text-decoration: none; font-weight: 700; }
+        .lang-toggle button {
+            font-family: inherit;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 6px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .lang-toggle button.active {
+            background: var(--accent);
+            color: #0f0f12;
+            border-color: var(--accent);
+            font-weight: 600;
+        }
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem 4rem;
+        }
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .subtitle { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 2.5rem; }
+        h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 2.2rem;
+            margin-bottom: 0.6rem;
+            color: var(--accent);
+        }
+        p, li { color: #e4e4e7; font-size: 0.95rem; }
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.5rem; }
+        .note { color: var(--text-muted); font-style: italic; font-size: 0.85rem; }
+        code { background: rgba(255,255,255,0.06); padding: 1px 6px; border-radius: 5px; font-size: 0.85em; }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        footer a { color: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="brand">
+            <img src="icons/unisaver_logo.png" alt="UniSaver">
+            <a href="unisaver.html">← UniSaver</a>
+        </div>
+        <div class="lang-toggle">
+            <button id="btn-tr" class="active" onclick="setLang('tr')">Türkçe</button>
+            <button id="btn-en" onclick="setLang('en')">English</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- ===================== TÜRKÇE ===================== -->
+        <div id="tr">
+            <h1>Aydınlatma Metni</h1>
+            <p class="subtitle">6698 sayılı KVKK m.10 ve Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ uyarınca hazırlanmıştır.</p>
+
+            <h2>1. Veri Sorumlusu</h2>
+            <p>Bu uygulama (UniSaver) kapsamında kişisel verileriniz, veri sorumlusu sıfatıyla <strong>Mirza Bal</strong> tarafından işlenmektedir.<br>
+            İletişim: <a href="mailto:bamisamu@hotmail.com">bamisamu@hotmail.com</a> — mirzabal.com</p>
+
+            <h2>2. İşlenen Kişisel Veriler</h2>
+            <ul>
+                <li><strong>Cihazınızda okunan (dışarı aktarılmayan) veriler:</strong> e-Devlet transkriptinizdeki ad-soyad, öğrenci numarası ve T.C. kimlik numarası. Bu bilgiler yalnızca cihazınızda işlenir, sunucularımıza aktarılmaz ve saklanmaz.</li>
+                <li><strong>İşlenen ders verileri:</strong> ders adı/kodu, harf notu ve/veya sayısal not, kredi, AKTS, ders saati, dönem bilgisi.</li>
+                <li><strong>Katkı işareti (personHash):</strong> yalnızca açık rıza verirseniz oluşturulur. Üniversite + öğrenci numarası + ad bilgisinden, cihazınızda tek yönlü bir özet (hash) alınıp sunucuda ayrıca gizli bir anahtarla (pepper) yeniden özetlenerek üretilen, kimliğinizi doğrudan içermeyen bir işarettir. Aynı transkriptin mükerrer sayılmasını önlemek dışında hiçbir amaçla kullanılmaz ve not içermez.</li>
+            </ul>
+
+            <h2>3. İşleme Amaçları</h2>
+            <ul>
+                <li><strong>(Birincil)</strong> Transkriptinizdeki ders ve notların okunarak kendi genel not ortalamanızın (GNO) ve akademik planlamanızın hesaplanması. Bu işlem tamamen cihazınızda gerçekleşir.</li>
+                <li><strong>(İkincil — yalnızca açık rıza verirseniz)</strong> Derslerin zorluk düzeyine ilişkin toplu/istatistiksel analizlerin oluşturulması amacıyla ders adı/kodu ve not verilerinin anonim ve istatistiksel biçimde işlenmesi.</li>
+            </ul>
+
+            <h2>4. Toplama Yöntemi ve Hukuki Sebebi</h2>
+            <p>Kişisel verileriniz, e-Devlet'ten indirdiğiniz transkript belgesinin uygulama içinde (cihazınızda) okunması yoluyla, kısmen otomatik olarak elde edilir.</p>
+            <ul>
+                <li><strong>Birincil amaç (GNO hesaplama):</strong> KVKK m.5/2-(c) — bir sözleşmenin/hizmetin kurulması veya ifasıyla doğrudan doğruya ilgili olması. Talep ettiğiniz hesaplama hizmetinin sunulabilmesi için gereklidir ve cihazınızda gerçekleşir.</li>
+                <li><strong>İkincil amaç (istatistiksel veri seti katkısı ve yurt dışına aktarım):</strong> KVKK m.5/1 ve m.9 — ilgili kişinin açık rızası. Bu amaç yalnızca açık rıza verdiğinizde işletilir.</li>
+            </ul>
+            <p class="note">(Not: "hukuki sebep" ve "işleme amacı" bilinçli olarak ayrı ayrı belirtilmiştir.)</p>
+
+            <h2>5. Verilerin Aktarılması</h2>
+            <p>Uygulamanın çalışması için altyapı hizmeti olarak Google Firebase / Google Cloud (veri işleyen) kullanılmaktadır ve bu altyapının sunucuları yurt dışında bulunabilir.</p>
+            <ul>
+                <li>İkincil amaç kapsamında (açık rıza verirseniz) oluşturulan anonim/istatistiksel ders verileri ve katkı işaretiniz (personHash) bu altyapıda saklanır.</li>
+                <li>Yurt dışına aktarım, açık rızanıza dayanır (m.9).</li>
+                <li>Verileriniz bunun dışında üçüncü kişilerle paylaşılmaz, satılmaz.</li>
+            </ul>
+
+            <h2>6. Saklama Süresi</h2>
+            <ul>
+                <li><strong>Anonim/istatistiksel ders verileri</strong> (ders bazlı toplamlar ve sayaçlar): kişisel veri niteliği taşımadığından süresiz saklanabilir.</li>
+                <li><strong>Katkı işareti (personHash):</strong> yalnızca mükerrer kaydı önlemek amacıyla tutulur; talebiniz üzerine silinir.</li>
+                <li><strong>Ham kimlik bilgileri (ad, öğrenci no, T.C.):</strong> hiçbir zaman sunucuda saklanmaz.</li>
+            </ul>
+
+            <h2>7. Haklarınız (KVKK m.11)</h2>
+            <p>İlgili kişi olarak veri sorumlusuna başvurarak; a) kişisel verinizin işlenip işlenmediğini öğrenme, b) işlenmişse buna ilişkin bilgi talep etme, c) işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, ç) yurt içinde/yurt dışında aktarıldığı üçüncü kişileri bilme, d) eksik/yanlış işlenmişse düzeltilmesini isteme, e) silinmesini/yok edilmesini isteme, f) (d) ve (e) kapsamındaki işlemlerin aktarıldığı üçüncü kişilere bildirilmesini isteme, g) otomatik sistemlerle analiz sonucu aleyhinize bir sonuç çıkmasına itiraz etme, ğ) kanuna aykırı işleme sebebiyle zarara uğrarsanız zararın giderilmesini talep etme haklarına sahipsiniz.</p>
+
+            <h2>8. Başvuru</h2>
+            <p>Yukarıdaki taleplerinizi <a href="mailto:bamisamu@hotmail.com">bamisamu@hotmail.com</a> üzerinden iletebilirsiniz. Başvurularınız en geç 30 gün içinde sonuçlandırılır.</p>
+            <p class="note">Yürürlük tarihi: 30.07.2026</p>
+        </div>
+
+        <!-- ===================== ENGLISH ===================== -->
+        <div id="en" style="display:none">
+            <h1>Privacy Notice</h1>
+            <p class="subtitle">Prepared under Article 10 of the Turkish Personal Data Protection Law No. 6698 (KVKK) and the related Communiqué. This English text is a translation for convenience; the Turkish version prevails in case of discrepancy.</p>
+
+            <h2>1. Data Controller</h2>
+            <p>Within this application (UniSaver), your personal data is processed by <strong>Mirza Bal</strong> as the data controller.<br>
+            Contact: <a href="mailto:bamisamu@hotmail.com">bamisamu@hotmail.com</a> — mirzabal.com</p>
+
+            <h2>2. Personal Data Processed</h2>
+            <ul>
+                <li><strong>Data read on your device (not transmitted):</strong> your name, student number and Turkish ID number in your e-Devlet transcript. This information is processed only on your device and is not transmitted to or stored on our servers.</li>
+                <li><strong>Course data processed:</strong> course name/code, letter and/or numerical grade, credits, ECTS, course hours, term.</li>
+                <li><strong>Contribution marker (personHash):</strong> created only if you give explicit consent. It is a marker that does not directly contain your identity, produced by taking a one-way hash of your university + student number + name on your device, then re-hashing it on the server with a secret key (pepper). It is used solely to prevent the same transcript from being counted more than once, and contains no grades.</li>
+            </ul>
+
+            <h2>3. Purposes of Processing</h2>
+            <ul>
+                <li><strong>(Primary)</strong> Reading the courses and grades in your transcript to calculate your own grade point average (GPA) and academic planning. This is performed entirely on your device.</li>
+                <li><strong>(Secondary — only if you give explicit consent)</strong> Processing course name/code and grade data in anonymous and statistical form to create aggregate/statistical analyses of course difficulty.</li>
+            </ul>
+
+            <h2>4. Method of Collection and Legal Basis</h2>
+            <p>Your personal data is obtained partly automatically, by reading the transcript document you download from e-Devlet within the application (on your device).</p>
+            <ul>
+                <li><strong>Primary purpose (GPA calculation):</strong> KVKK Art. 5/2-(c) — being directly related to the establishment or performance of a contract/service. Necessary to provide the calculation service you requested, and performed on your device.</li>
+                <li><strong>Secondary purpose (contribution to the statistical dataset and transfer abroad):</strong> KVKK Art. 5/1 and Art. 9 — the data subject's explicit consent. This purpose operates only if you give explicit consent.</li>
+            </ul>
+            <p class="note">(Note: "legal basis" and "purpose of processing" are intentionally stated separately.)</p>
+
+            <h2>5. Transfer of Data</h2>
+            <p>Google Firebase / Google Cloud (as data processor) is used as infrastructure for the application to function, and this infrastructure's servers may be located abroad.</p>
+            <ul>
+                <li>If you give consent, the anonymous/statistical course data and your contribution marker (personHash) generated under the secondary purpose are stored on this infrastructure.</li>
+                <li>The transfer abroad is based on your explicit consent (Art. 9).</li>
+                <li>Your data is otherwise not shared with or sold to third parties.</li>
+            </ul>
+
+            <h2>6. Retention Period</h2>
+            <ul>
+                <li><strong>Anonymous/statistical course data</strong> (course-level totals and counters): may be retained indefinitely, as it does not constitute personal data.</li>
+                <li><strong>Contribution marker (personHash):</strong> retained only to prevent duplicate records; deleted upon your request.</li>
+                <li><strong>Raw identity information (name, student number, Turkish ID):</strong> never stored on the server.</li>
+            </ul>
+
+            <h2>7. Your Rights (KVKK Art. 11)</h2>
+            <p>As a data subject, by applying to the data controller you have the right to: a) learn whether your personal data is processed; b) request information if it has been processed; c) learn the purpose of processing and whether it is used in accordance with that purpose; ç) know the third parties to whom it is transferred domestically or abroad; d) request correction if processed incompletely or inaccurately; e) request deletion or destruction; f) request that operations under (d) and (e) be notified to third parties to whom the data was transferred; g) object to a result against you arising from automated analysis; ğ) claim compensation for damage arising from unlawful processing.</p>
+
+            <h2>8. Application</h2>
+            <p>You may submit the above requests via <a href="mailto:bamisamu@hotmail.com">bamisamu@hotmail.com</a>. Your requests will be concluded within 30 days at the latest.</p>
+            <p class="note">Effective date: 30.07.2026</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 UniSaver. Developed by Mirza Bal. · <a href="unisaver.html">Ana Sayfa</a>
+    </footer>
+
+    <script>
+        function setLang(l) {
+            document.getElementById('tr').style.display = (l === 'tr') ? 'block' : 'none';
+            document.getElementById('en').style.display = (l === 'en') ? 'block' : 'none';
+            document.getElementById('btn-tr').classList.toggle('active', l === 'tr');
+            document.getElementById('btn-en').classList.toggle('active', l === 'en');
+            document.documentElement.lang = l;
+        }
+    </script>
+</body>
+</html>
